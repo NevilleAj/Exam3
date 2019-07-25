@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Belt Exam Login and Registration";
+}
+<div class="jumbotron">
+    <h1>Bright Ideas</h1>
+</div>
+@{
+    <ul>
+        @foreach(var error in ViewBag.valErrors)
+        {
+            if(error.Errors.Count > 0)
+                {
+                    <li>@error.Errors[0].ErrorMessage</li>
+                }
+        }
+    </ul>
+}<div class="col-sm-8 well">
+<form action="register" method="POST">
+    <fieldset>
+        <label for="UserName">Name:</label><input id="UserName" type="text" name="UserName" value="">
+        <br>
+        <label for="UserAlias">Alias:</label><input id="UserAlias" type="text" name="UserAlias" value="">
+        <br>
+        <label for="Email">Email Address:</label><input id="Email" type="text" name="Email" value="">
+        <br>
+        <label for="Password">Password:</label><input id="Password" type="password" name="Password" value="">
+        <br>
+        <label for="PasswordConf">Retype-Password:</label><input id="PasswordConf" type="password" name="PasswordConf" value="">
+        <br>
+        <input type="submit" name="register" value="Register">
+    </fieldset>
+</form>
+</div>
+<div class="col-sm-4 well">
+<form action="login" method="POST">
+    <fieldset>
+        <label for="Email">Email Address:</label><input type="text" name="Email" value="">
+        <br>
+        <label for="Password">Password:</label><input type="password" name="Password" value="">
+        <br>
+        <input type="submit" name="login" value="Login">
+    </fieldset>
+</form>
+</div>
